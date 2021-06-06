@@ -1,4 +1,5 @@
 struct Node{
+    int urutan;
     Node *left;
     Node *right;
 };

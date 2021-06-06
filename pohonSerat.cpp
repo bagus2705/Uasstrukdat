@@ -1,41 +1,36 @@
-#include <iostream>
+#include<iostream>
 
 struct Node{
-    int urutan;
-    std::string data;
-    Node *left;
-    Node *right;
+ float value;
+   Node *left;
+   Node *right;
 };
+
 using pointer=Node*;
-using tree=pointer;
-tree root;
+using Tree=pointer;
 
-tree createTree() { 
-  return nullptr; 
-  }
-pointer createElement(std::string data,int urutan) {
- pointer elementBaru=new Node;
- elementBaru=new Node;
- elementBaru->urutan=urutan;
- elementBaru->data=data;
- elementBaru->left=nullptr;
- elementBaru->right=nullptr;
- return elementBaru;
-}
-void insertTree(tree root,pointer newNode){
-  if(root == nullptr){
-    root = newNode;
-    }else{
-  bool isLowerThanRoot = (newNode->urutan < root->urutan);
-
-  if(isLowerThanRoot){
-    insertTree(root->left, newNode);}
-  else{
-    insertTree(root->right, newNode);
-}
-}
+void createNode(pointer& newNode, float value){
+   newNode = new Node;
+   newNode->value = value;
+   newNode->left = nullptr;
+   newNode->right = nullptr;
 }
 
-void cekUmur(int umur,tree Root){
+void insertBST(Tree& root, pointer newNode){
+   if(root == nullptr){
+     root = newNode;
+ }
+ else{
+    bool isLowerThanRoot = (newNode->value < root->value);
 
+    if(isLowerThanRoot){
+      insertBST(root->left, newNode);}
+    else{
+      insertBST(root->right, newNode);}
+ }
 }
+
+int main(){
+ Tree pohon=nullptr;
+ pointer newNode;
+ float BB, TB, BMI;
