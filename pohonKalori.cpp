@@ -33,18 +33,19 @@ void insertBST(Tree& root, pointer newNode){
 int main(){
  Tree pohon=nullptr;
  pointer newNode;
- float BB, TB, BMI;
+ float BB;
+ int usia;
  
- createNode(newNode,13.44); insertBST(pohon,newNode);
- createNode(newNode,17.941817); insertBST(pohon,newNode);
- createNode(newNode,19.477147); insertBST(pohon,newNode);
- createNode(newNode,19.812365); insertBST(pohon,newNode);
- createNode(newNode,20.702862); insertBST(pohon,newNode);
-
+ createNode(newNode,115.0); insertBST(pohon,newNode);
+ createNode(newNode,3.0); insertBST(pohon,newNode);
+ createNode(newNode,2.0); insertBST(pohon,newNode);
+ createNode(newNode,230.0/3.0); insertBST(pohon,newNode);
+ createNode(newNode,4.0); insertBST(pohon,newNode);
+ createNode(newNode,6.0); insertBST(pohon,newNode);
   std::cout << "Masukkan Data Diri Anda" << std::endl;
  std::cout << "Berat Badan (dalam kg): "; std::cin >> BB;
- std::cout << "Tinggi Badan (dalam cm): "; std::cin >> TB;
- BMI = BB / ((TB/100)*(TB/100));
+ std::cout << "Usia "; std::cin >> usia;
+
  
- createNode(newNode,BMI); insertBST(pohon,newNode);
+ createNode(newNode,usia); insertBST(pohon,newNode);
 }
