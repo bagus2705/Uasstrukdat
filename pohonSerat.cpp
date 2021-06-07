@@ -47,3 +47,4 @@ int main(){
 
   std::cout << "Masukkan Data Diri Anda" << std::endl;
  std::cout << "Usia"; std::cin >>usia;
+}
