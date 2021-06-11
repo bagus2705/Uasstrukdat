@@ -3,7 +3,7 @@
 struct Node{
  std::string status;
  std::string data;
- float value;
+ int value;
  int usia;
    Node *left;
    Node *right;
@@ -11,9 +11,10 @@ struct Node{
 
 using pointer=Node*;
 using Tree=pointer;
-void createRoot(pointer &newNode,int value){
+void createRootU(pointer &newNode,int value,int usia){
   newNode = new Node;
   newNode->value = value;
+  newNode->usia = usia;
   newNode->left = nullptr;
   newNode->right = nullptr;
 }
@@ -39,9 +40,7 @@ void insertBST(Tree& root, pointer newNode){
       insertBST(root->right, newNode);}
  }
 }
-void insertUsia(Tree& root,int usia){
-root->usia=usia;
-}
+
 void cekUsia(Tree& root,int batas){
   pointer cek=root;
 if(root->usia<batas){
@@ -56,13 +55,13 @@ int main(){
  Tree root=nullptr;
  pointer newNode;
  int usia,batas=8;
-  createRoot(newNode, 2);insertBST(root,newNode);
-  createNode(newNode,"rendah","120.0/3.0",1); insertBST(root,newNode);
-  createNode(newNode,"sedang","240.0/10.0",3); insertBST(root,newNode);
+
 
   std::cout << "Masukkan Data Diri Anda" << std::endl;
  std::cout << "Usia :"; std::cin >>usia;
- insertUsia(root,usia);
+  createRootU(newNode,2,usia);insertBST(root,newNode);
+  createNode(newNode,"rendah","120.0/3.0",1); insertBST(root,newNode);
+  createNode(newNode,"sedang","240.0/10.0",3); insertBST(root,newNode);
  cekUsia(root,batas);
 
 }
