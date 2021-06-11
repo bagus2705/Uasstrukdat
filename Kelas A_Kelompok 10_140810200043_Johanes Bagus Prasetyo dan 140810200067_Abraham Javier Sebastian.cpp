@@ -1,5 +1,8 @@
 #include <iostream>
-
+/*
+Johanes Bagus Prasetyo - 140810200043
+Abraham Javier Sebastian - 140810200067
+*/
 
 struct Node{
     int urutan;
@@ -51,6 +54,7 @@ void insertTree(Tree& root, pointer newNode){
  }
 }
 
+
 int main(){
     int pilihan,exit=0;
     std::cout<<"Decision Tree Status Berat Badan dan Kebutuhan Energi Pada Anak Usia 7-12 Tahun";
@@ -64,7 +68,7 @@ int main(){
     std::cout<<"Masukkan Pilihan";
     std::cin>>pilihan;
     switch(pilihan){
-        case(1):
+        case(1):{
          Tree pohon=nullptr;
  pointer newNode;
  float BB, TB, BMI;
@@ -81,9 +85,11 @@ int main(){
  BMI = BB / ((TB/100)*(TB/100));
  
  createNode(newNode,BMI); insertTree(pohon,newNode);
+        
  exit=1;
         break;
-        case(2):
+        }
+        case(2):{
         Tree pohon=nullptr;
  pointer newNode;
  float BB;
@@ -101,7 +107,9 @@ int main(){
  createNode(newNode,usia); insertTree(pohon,newNode);
  exit=1;
         break;
+        }
         case(3):
+        {
         Tree pohon=nullptr;
  pointer newNode;
  float BB;
@@ -119,7 +127,12 @@ int main(){
  createNode(newNode,usia); insertTree(pohon,newNode);
  exit=1;
         break;
-        case(4):
+        }
+        case(4):{
+        Tree pohon=nullptr;
+         pointer newNode;
+         float BB;
+         int usia;
  createNode(newNode,115.0); insertTree(pohon,newNode);
  createNode(newNode,3.0); insertTree(pohon,newNode);
  createNode(newNode,2.0); insertTree(pohon,newNode);
@@ -131,7 +144,9 @@ int main(){
  std::cout << "usia: "; std::cin >> usia;
  exit=1;
         break;
+        }
         case(5):
+        {
         Tree pohon=nullptr;
  pointer newNode;
  int usia;
@@ -147,11 +162,14 @@ createNode(newNode,6.0); insertTree(pohon,newNode);
  std::cout << "Usia "; std::cin >> usia;
  exit=1;
         break;
+        }
         case(6):
+        {
  Tree pohon=nullptr;
  pointer1 newNodes;
+ pointer newNode;
  int usia;
-  createNodeS(newNodes,"usia","8.0",5);insertTree(pohon,newNode);
+  createNodeS(newNodes,"usia","8.0",5); insertTree(pohon,newNode);
   createNodeS(newNodes,"rendah","120.0/3.0",3); insertTree(pohon,newNode);
   createNodeS(newNodes,"sedang","240.0/10.0",7); insertTree(pohon,newNode);
 
@@ -160,9 +178,10 @@ createNode(newNode,6.0); insertTree(pohon,newNode);
  std::cout << "Usia"; std::cin >>usia;
  exit=1;
         break;
-        default:
+        }
+        default:{
         std::cout<<"Perintah yang dipilih salah";
         break;
-        
+        }
     }while(exit!=1);
 }
