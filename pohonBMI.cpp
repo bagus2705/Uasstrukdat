@@ -99,7 +99,7 @@ if (cek==root->right->right->right){
 }
 if (cek==root->right->right->right->right){
   cek=cekBMI(cek,Batas5);
-  std::cout<<cek->value<<std::endl;
+    std::cout<<cek->value<<std::endl;
 }
 /*std::cout<<"status:"<<cek->status<<std::endl;
 std::cout<<"Nilai Batas:"<<cek->data;*/

@@ -100,7 +100,7 @@ int main(){
   createNode(newNode,"sedang","4.0",12); insertBST(root,newNode);
    createNode(newNode,"tinggi","6.0",14); insertBST(root,newNode);
    inOrder(root);
-  /*
+  
 cek=cekUsia(root,batasU1);
 std::cout<<cek->value<<std::endl;
 if (cek=root->left){
@@ -119,7 +119,7 @@ if(cek=root->right->right){
   cek=cekBB(cek,batasB3);
   std::cout<<cek->value<<std::endl;
 }
-/* std::cout<<"status:"<<cek->status<<std::endl;
- std::cout<<"Nilai batas:"<<cek->data<<std::endl;*/
+ std::cout<<"status:"<<cek->status<<std::endl;
+ std::cout<<"Nilai batas:"<<cek->data<<std::endl;
 }
  

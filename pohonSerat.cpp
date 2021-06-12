@@ -48,8 +48,9 @@ cek=root->left;
 }else{
   cek=root->right;
 }
-std::cout<<"Status:"<<cek->status<<std::endl;
-std::cout<<"Nilai Batas: "<<cek->data<<std::endl;
+std::cout << "Kebutuhan Serat : " << cek->status << std::endl;
+	std::cout << "Nilai Batas : " << cek->data << std::endl;
+}
 }
 int main(){
  Tree root=nullptr;
