@@ -189,7 +189,7 @@ int main(){
 	TreeSerat rootSerat=nullptr; pointerSerat newNodeS;
 	TreeBMI rootBMI=nullptr; pointerBMI newNodeB,checkBMI;
 	TreeKalori rootKalori=nullptr; pointerKalori newNodeK,checkKalori;
-    int pilihan,BatasSerat=8,BatasKaloriU1=8,exit=0;
+    int pilihan,BatasSerat=8,BatasKaloriU1=8,exit=0,exitB=0,exitK=0;
 	float usia, BB, TB,BMI,BatasBMI1=13.44,BatasBMI2=17.941817,BatasBMI3=19.477147,
  	BatasBMI4 = 19.812365,BatasBMI5=20.702862,
  	BatasKaloriB1=28,BatasKaloriB2=43,BatasKaloriB3=44,BatasKaloriU2=7.8;
@@ -222,7 +222,8 @@ int main(){
 		std::cin >> pilihan;
 	
 	    switch(pilihan){
-	        case 1:{		
+	        case 1:{
+				exitB=0;
 				BMI = BB / ((TB/100)*(TB/100));
  				std::cout << "BMI Anda adalah " << BMI << "\n";
 
@@ -238,25 +239,38 @@ int main(){
     			createNodeBMI(newNodeB,"Normal","19.0/7.0",17); insertBSTBMI(rootBMI,newNodeB);
   				createNodeBMI(newNodeB,"Kelebihan Berat Badan","3.0",19); insertBSTBMI(rootBMI,newNodeB);
 
-				checkBMI = cekBMI(rootBMI,BatasBMI1);
-				if(checkBMI==rootBMI->right){
-  					checkBMI=cekBMI(checkBMI,BatasBMI2);}
-				if(checkBMI==rootBMI->right->right){
-  					checkBMI=cekBMI(checkBMI,BatasBMI3);}
-				if(checkBMI==rootBMI->right->right->right){
-  					checkBMI=cekBMI(checkBMI,BatasBMI4);}
-				if(checkBMI==rootBMI->right->right->right->right){
-  					checkBMI=cekBMI(checkBMI,BatasBMI5);}
 				
-				std::cout<<"Status : "<<checkBMI->status<<std::endl;
-				std::cout<<"Nilai Batas : "<<checkBMI->data;
 				std::cout << std::endl;
+				checkBMI = cekBMI(rootBMI,BatasBMI1);
+do{
+  switch(checkBMI->value){
+    case 12:{
+  	checkBMI=cekBMI(checkBMI,BatasBMI2);
+  break;}
+case 14:{
+ checkBMI=cekBMI(checkBMI,BatasBMI3);
+  break;}
+case 16:{
+checkBMI=cekBMI(checkBMI,BatasBMI4);
+  break;}
+case 18:{
+  checkBMI=cekBMI(checkBMI,BatasBMI5);
+  break;}
+case 9:case 11:case 13:case 15:case 17:case 19:{
+std::cout<<"Status : "<<checkBMI->status<<std::endl;
+				std::cout<<"Nilai Batas : "<<checkBMI->data;
+exitB=1;
+break;
+}
+}
+}while(exitB!=1);
 	        	break;
 			}
 	        case 2:
 			case 3: 
 			case 4: 
 			case 5:{ 
+				exitK=0;
 	         	createNodeUKalori(newNodeK, 8,usia); insertBSTKalori(rootKalori,newNodeK);
   				createNodeBKalori(newNodeK, 3,BB); insertBSTKalori(rootKalori,newNodeK);
   				createNodeBKalori(newNodeK, 10,BB); insertBSTKalori(rootKalori,newNodeK);
@@ -277,24 +291,7 @@ switch(checkKalori->value){
   case 9:
   case 12:
   case 14:{
-
-				if(pilihan == 2){
-					std::cout << "Kebutuhan kalori harian : " << checkKalori->status << std::endl;
-					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
-				}
-				else if(pilihan == 3){
-					std::cout << "Kebutuhan karbohidrat harian : " << checkKalori->status << std::endl;
-					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
-				}
-				else if(pilihan == 4){
-					std::cout << "Kebutuhan lemak harian : " << checkKalori->status << std::endl;
-					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
-				}
-				else if(pilihan == 5){
-					std::cout << "Kebutuhan protein harian : " << checkKalori->status << std::endl;
-					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
-				}
-          exit=1;
+          exitK=1;
     break;
   }
 case(3):{
@@ -314,7 +311,23 @@ case(13):{
 break;
 }
   }
-}while (exit!=1);
+}while (exitK!=1);
+if(pilihan = 2){
+					std::cout << "Kebutuhan kalori harian : " << checkKalori->status << std::endl;
+					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
+				}
+				else if(pilihan == 3){
+					std::cout << "Kebutuhan karbohidrat harian : " << checkKalori->status << std::endl;
+					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
+				}
+				else if(pilihan == 4){
+					std::cout << "Kebutuhan lemak harian : " << checkKalori->status << std::endl;
+					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
+				}
+				else if(pilihan == 5){
+					std::cout << "Kebutuhan protein harian : " << checkKalori->status << std::endl;
+					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
+				}
 	        	break;
 			}
 	        case(6):{
