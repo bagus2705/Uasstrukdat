@@ -268,18 +268,16 @@ int main(){
     			createNodeKalori(newNodeK,"sedang","2.0",7); insertBSTKalori(rootKalori,newNodeK);
   				createNodeKalori(newNodeK,"sedang","4.0",12); insertBSTKalori(rootKalori,newNodeK);
    				createNodeKalori(newNodeK,"tinggi","6.0",14); insertBSTKalori(rootKalori,newNodeK);
+				   checkKalori=cekUsiaKalori(rootKalori,BatasKaloriU1);
+   do{
+switch(checkKalori->value){
+  case 1:
+  case 4:
+  case 7:
+  case 9:
+  case 12:
+  case 14:{
 
-	 		
-				checkKalori=cekUsiaKalori(rootKalori,BatasKaloriU1);
-				if(checkKalori=rootKalori->left){
-					checkKalori=cekBBKalori(checkKalori,BatasKaloriB1);}
-				if(checkKalori=rootKalori->left->right){
-				  	checkKalori=cekUsiaKalori(checkKalori,BatasKaloriU2);}
-				if(checkKalori=rootKalori->right){
-				  	checkKalori=cekBBKalori(checkKalori,BatasKaloriB2);}
-				if(checkKalori=rootKalori->right->right){
-				  	checkKalori=cekBBKalori(checkKalori,BatasKaloriB3);}
-				
 				if(pilihan == 2){
 					std::cout << "Kebutuhan kalori harian : " << checkKalori->status << std::endl;
 					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
@@ -296,7 +294,27 @@ int main(){
 					std::cout << "Kebutuhan protein harian : " << checkKalori->status << std::endl;
 					std::cout << "Nilai batas : " << checkKalori->data << std::endl;
 				}
-				
+          exit=1;
+    break;
+  }
+case(3):{
+ checkKalori=cekBBKalori(checkKalori,BatasKaloriB1);
+break;
+}
+case(10):{
+ checkKalori=cekBBKalori(checkKalori,BatasKaloriB2);
+ break;
+}
+case(6):{
+checkKalori=cekUsiaKalori(checkKalori,BatasKaloriU2);
+break;
+}
+case(13):{
+  	checkKalori=cekBBKalori(checkKalori,BatasKaloriB3);
+break;
+}
+  }
+}while (exit!=1);
 	        	break;
 			}
 	        case(6):{
