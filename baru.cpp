@@ -129,7 +129,7 @@ void insertBSTBMI(TreeBMI& root, pointerBMI newNode){
  	}
 }
 
-pointerBMI cekBMI(TreeBMI& root,int batas){
+pointerBMI cekBMI(TreeBMI& root,float batas){
   	pointerBMI cek=root;
 	
 	if(root->bmi<=batas){
